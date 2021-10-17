@@ -22,4 +22,12 @@ The last think i did was the Menus with the mainmenu and the pausemenu.
 I did some changes in the game visualy too.
 
 ## Week 3
+Made the enemy patrol system and attack system.
+
+Now our Player can die and a gameover screen will open.
+
+I have issue with the playercombat i will fix that later on.
+
+I made some design changes too.
+## Week 4
 In progress...
