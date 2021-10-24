@@ -30,4 +30,12 @@ I have issue with the playercombat i will fix that later on.
 
 I made some design changes too.
 ## Week 4
+When an enemy dies it will fall down and stay there for the rest of the gameplay.
+
+Our Player also lays down when he is dead but seconds later the gameover menu will pop up.
+
+I made a story dialog in the start that explains why we go on and kill everybody.(not 100% done)
+
+Made some design changes too and now there are more enemies in our way.
+## Week 5
 In progress...
