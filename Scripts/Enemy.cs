@@ -5,12 +5,17 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Animator anim;
-
     public int maxHealth = 100;
     public int currentHealth;
 
+    private Enemy_behaviour enemyParent;
+    private void Awake(){
+
+        enemyParent = GetComponentInParent<Enemy_behaviour>();
+    }
+
     void Start()
-    {
+    {   
         currentHealth = maxHealth;
         
     }
@@ -28,8 +33,9 @@ public class Enemy : MonoBehaviour
         Debug.Log("Meghalt az ellenfél.");
         // Halál animáció
         anim.SetBool("IsDead", true);
-        
-        Destroy (gameObject);
+        enemyParent.alive = false;
+        gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+        //Destroy (gameObject);
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
 

@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     public Animator anim;
     public GameOverScreen GameOverScreen;
+    public float delayTime = 0.2f;
 
     public int maxHealth = 100;
     int currentHealth;
@@ -33,15 +34,17 @@ public class Player : MonoBehaviour
         
         Debug.Log("Meghaltál.");
         // Halál animáció
-       // anim.SetBool("IsDead", true);
-
+        anim.SetBool("isDead", true);
+        gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
-        SceneManager.LoadScene("Gameover");
+        Invoke("DelayedAction", delayTime);
 
-
-
+            
     }
-
+    void DelayedAction(){
+         SceneManager.LoadScene("Gameover");
+    }
+ 
 
 }

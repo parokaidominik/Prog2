@@ -18,6 +18,7 @@ public class Enemy_behaviour : MonoBehaviour
     public Transform attackPoint;
     public LayerMask playerLayers;
     public int attackDamage = 10;
+    public bool alive;
     /////////////////
     #endregion
 
@@ -34,6 +35,7 @@ public class Enemy_behaviour : MonoBehaviour
         SelectTarget();
         intTimer = timer;
         anim = GetComponent<Animator>();
+        alive = true;
         
     }
 
@@ -46,11 +48,11 @@ public class Enemy_behaviour : MonoBehaviour
 
         }
 
-        if(!attackMode){
+        if(!attackMode & alive){
              Move();
         }
 
-        if(inRange){
+        if(inRange & alive){
             
             EnemyLogic();
         }
@@ -137,6 +139,7 @@ public class Enemy_behaviour : MonoBehaviour
     }
 
     public void SelectTarget(){
+        
         float distanceToLeft = Vector2.Distance(transform.position, leftLimit.position);
         float distanceToRight = Vector2.Distance(transform.position, rightLimit.position);
 
@@ -146,13 +149,15 @@ public class Enemy_behaviour : MonoBehaviour
         else{
             target = rightLimit;
         }
-
+        
         Flip();
-
+        
     }
 
     public void Flip(){
+        if(alive){
         Vector3 rotation = transform.eulerAngles;
+        
         if(transform.position.x > target.position.x){
             rotation.y = 180f;
         }
@@ -162,5 +167,7 @@ public class Enemy_behaviour : MonoBehaviour
         }
 
         transform.eulerAngles = rotation;
+        }
     }
+    
     }
