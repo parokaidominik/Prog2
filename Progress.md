@@ -38,4 +38,17 @@ I made a story dialog in the start that explains why we go on and kill everybody
 
 Made some design changes too and now there are more enemies in our way.
 ## Week 5
+Made a new enemy called "Goblin".
+
+Map designing.
+## Week 6
+I made the Inventory System.
+
+We can now pick up, eximane or grab an item.
+
+We also can stock items in our inventory.
+
+90 % done of it.
+
+## Week 7
 In progress...
