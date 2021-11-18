@@ -49,6 +49,11 @@ We can now pick up, eximane or grab an item.
 We also can stock items in our inventory.
 
 90 % done of it.
-
 ## Week 7
+Made a working healthbar.
+
+Did the EndScene and the EndDialog.
+
+Map designing.
+## Week 8
 In progress...
