@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public Animator anim;
     public GameOverScreen GameOverScreen;
     public float delayTime = 0.2f;
+    public Image fillBar;
 
-    public int maxHealth = 100;
-    int currentHealth;
+    public float maxHealth = 10000;
+    float currentHealth;
    // public HealthbarBehaviour Healthbar;
 
     void Start()
@@ -22,6 +24,8 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage){
         currentHealth -= damage;
+        fillBar.fillAmount = currentHealth / 10000;
+
         // Sérülés animáció
         //anim.SetTrigger("Hurt");
         //Healthbar.SetHealth(currentHealth, maxHealth);
@@ -42,6 +46,7 @@ public class Player : MonoBehaviour
 
             
     }
+
     void DelayedAction(){
          SceneManager.LoadScene("Gameover");
     }

@@ -53,4 +53,27 @@ public class Dialog : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
+
+
+//////////////////
+
+public void EndScene(){
+
+        continueButton.SetActive(false);
+
+        if(index < sentences.Length -1){
+            index++;
+            textDisplay.text = "";
+            StartCoroutine(Type());
+
+        }
+        else{
+        continueButton.SetActive(false);
+        SceneManager.LoadScene("Created");
+        
+    }}
+
+    public void SkipEnd(){
+        SceneManager.LoadScene("Created");
+    }
 }
